@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECURE ACCESS: Tanush's Heart 🌹</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bgmi-gold: #f3ad16;
+            --hot-pink: #ff0054;
+            --soft-pink: #ffe5ec;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Sparkle/Glitter Effect Canvas */
+        #glitter-canvas {
+            position: fixed;
+            top: 0; left: 0;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .portal-frame {
+            width: 90%;
+            max-width: 450px;
+            height: 85vh;
+            background: white;
+            border: 10px solid;
+            border-image: url('https://www.transparenttextures.com/patterns/pink-dust.png') 30 round;
+            border-radius: 20px;
+            box-shadow: 0 0 50px var(--hot-pink);
+            position: relative;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .page { display: none; animation: fadeIn 0.8s ease-in-out; }
+        .active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+        /* BGMI Themed Login */
+        .bgmi-input {
+            background: #222;
+            color: var(--bgmi-gold);
+            border: 2px solid var(--bgmi-gold);
+            padding: 12px;
+            margin: 10px 0;
+            width: 80%;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn-action {
+            background: linear-gradient(45deg, var(--hot-pink), #ff5c8a);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 0, 84, 0.4);
+            margin-top: 20px;
+        }
+
+        /* No Nazar Zone 🧿 */
+        .nazar-zone {
+            background: radial-gradient(circle, #003087, #000);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 50% 50% 10px 10px;
+            border: 4px solid #00c6ff;
+        }
+
+        /* Photo Entry Grid */
+        .photo-entry {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .photo-entry img {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid var(--hot-pink);
+        }
+
+        /* Vintage Letter */
+        .vintage-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            line-height: 1.6;
+            background: #fff9ed;
+            padding: 25px;
+            border: 1px solid #d4af37;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.05);
+            text-align: left;
+            color: #333;
+        }
+
+        /* Realistic Certificate */
+        .certificate-box {
+            border: 15px double #d4af37;
+            padding: 30px;
+            background: #fff;
+            position: relative;
+        }
+        .seal {
+            width: 80px;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body onclick="createSparkle(event)">
+
+    <canvas id="glitter-canvas"></canvas>
+
+    <div class="portal-frame">
+        
+        <div id="page1" class="page active">
+            <img src="https://upload.wikimedia.org/wikipedia/en/2/20/Battlegrounds_Mobile_India_Logo.png" width="150" style="margin-bottom: 20px;">
+            <h2 style="color: var(--bgmi-gold);">HEART SERVER LOGIN</h2>
+            <p>Verification Required for <b>Tanush Behera</b></p>
+            <input type="text" id="username" class="bgmi-input" placeholder="PLAYER ID (tanush)">
+            <input type="password" id="password" class="bgmi-input" placeholder="SECRET CODE (1412)">
+            <button class="btn-action" onclick="checkLogin()">START MISSION ❤️</button>
+        </div>
+
+        <div id="page2" class="page">
+            <h2 style="color: var(--hot-pink);">Entering My Heart...</h2>
+            <p>Warning: This space is 100% occupied by you.</p>
+            <div class="photo-entry">
+                <img src="7272.jpg" alt="Tanush 1">
+                <img src="7272.jpg" alt="Tanush 2">
+                <img src="7272.jpg" alt="Tanush 3">
+                <img src="7272.jpg" alt="Tanush 4">
+            </div>
+            <button class="btn-action" onclick="showPage(3)">Enter Deeper ✨</button>
+        </div>
+
+        <div id="page3" class="page">
+            <div class="nazar-zone">
+                <h1 style="font-size: 50px;">🧿</h1>
+                <h2>NO NAZAR ZONE</h2>
+                <p>Buri nazar wale tera moonh kala!</p>
+                <p>Protecting our "Fake-to-Real" bond from every evil eye.</p>
+            </div>
+            <button class="btn-action" onclick="showPage(4)">Open My Letter 📜</button>
+        </div>
+
+        <div id="page4" class="page">
+            <div class="vintage-letter">
+                Tanush, <br><br>
+                They say life doesn't follow a script, but our story started with a literal 'fake' one. We joined that group chat as partners with the one rule we weren't supposed to break: <i>don’t fall in love.</i><br><br>
+                I think we both know I perfectly break following rules when it comes to you. Remembering December 14th still gives me butterflies—watching the chat freeze while you processed my confession... those five minutes felt like a lifetime. <br><br>
+                Your 'yes' was the best plot twist ever. Today, I’m asking you to keep being my real everything. <br><br>
+                I love you, Tanush.💞🎀<br>
+                <b>Happy Propose Day 💕🧿</b>
+            </div>
+            <button class="btn-action" onclick="showPage(5)">The Question 💍</button>
+        </div>
+
+        <div id="page5" class="page">
+            <h2 style="color: var(--hot-pink);">Final Match Result</h2>
+            <p style="font-size: 22px; font-weight: bold;">Will you keep being my boyfriend?</p>
+            <button class="btn-action" onclick="showPage(6)" style="width: 100%;">Winner Winner Chicken Dinner (YES!)</button>
+            <button class="btn-action" onclick="showPage(6)" style="width: 100%; background: gold; color: black;">Of course Yesss! 😍</button>
+        </div>
+
+        <div id="page6" class="page">
+            <div class="certificate-box">
+                <h3 style="margin: 0; color: #888;">CERTIFICATE OF POSSESSION</h3>
+                <h1 style="font-family: 'Playfair Display'; color: #b8860b;">Tanush Behera</h1>
+                <p>is hereby recognized as the</p>
+                <h2 style="color: var(--hot-pink);">BEST BOYFRIEND IN THE WORLD</h2>
+                <hr>
+                <p><small>Issued on: Propose Day 2024</small></p>
+                <p><small>Valid for: Eternity</small></p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Red_Seal.png" class="seal">
+            </div>
+            <p style="margin-top: 15px;">Screenshot & Share! 🧿💖</p>
+        </div>
+
+    </div>
+
+    <script>
+        // Glitter/Sparkle Effect
+        const canvas = document.getElementById('glitter-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        function createSparkle(e) {
+            for (let i = 0; i < 10; i++) {
+                const x = e.clientX;
+                const y = e.clientY;
+                const size = Math.random() * 5 + 2;
+                const sp = document.createElement('div');
+                sp.style.position = 'fixed';
+                sp.style.left = x + 'px';
+                sp.style.top = y + 'px';
+                sp.style.width = size + 'px';
+                sp.style.height = size + 'px';
+                sp.style.background = `hsl(${Math.random() * 360}, 100%, 70%)`;
+                sp.style.borderRadius = '50%';
+                sp.style.pointerEvents = 'none';
+                sp.style.boxShadow = '0 0 10px white';
+                document.body.appendChild(sp);
+
+                const angle = Math.random() * Math.PI * 2;
+                const velocity = Math.random() * 5 + 2;
+                let opacity = 1;
+
+                const move = setInterval(() => {
+                    sp.style.left = parseFloat(sp.style.left) + Math.cos(angle) * velocity + 'px';
+                    sp.style.top = parseFloat(sp.style.top) + Math.sin(angle) * velocity + 'px';
+                    opacity -= 0.05;
+                    sp.style.opacity = opacity;
+                    if (opacity <= 0) {
+                        clearInterval(move);
+                        sp.remove();
+                    }
+                }, 20)
+            }
+        }
+
+        function checkLogin() {
+            const u = document.getElementById('username').value.toLowerCase();
+            const p = document.getElementById('password').value;
+            if(u === "tanush" && p === "1412") {
+                showPage(2);
+            } else {
+                alert("ACCESS DENIED. Enter correct Player ID & Secret Code!");
+            }
+        }
+
+        function showPage(n) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('page' + n).classList.add('active');
+        }
+    </script>
+</body>
+</html>
